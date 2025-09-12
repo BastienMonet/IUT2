@@ -88,6 +88,7 @@ begin
             set res = concat(res , code , ' ' , nom , ' ' , departement, ' / ') ;
         end if;
     end while;
+    close entrepots;
     select res;
 end |
 delimiter ;
@@ -97,6 +98,36 @@ call afficheEntrepot();
 
 -- 5. Ecrire une proc ́edure pour afficher tous les entrepˆots tri ́es par d ́epartement avec pour
 -- chaque d ́epartement, le nombre d’entrepˆots qu’a le d ́epartement.
+
+delimiter |
+create or replace procedure afficheEparDepartement()
+begin
+    declare codeE int;
+    declare nomE Varchar(30);
+    declare departementE Varchar(30);
+    declare nbE int;
+    declare fini boolean default false;
+    declare res Varchar(500) default ' ';
+    declare entrepots cursor for
+        select code, nom, departement, count(*) from ENTREPOT group by departement;
+    declare continue handler for not found set fini = true ;
+
+    open entrepots;
+
+    while not fini do
+        fetch entrepots into codeE, nomE, departementE, nbE;
+        if not fini then
+            set res = concat(res, codeE, ' ', nomE, ' ', departementE, ' ', nbE, ' / ');
+        end if;
+    end while;
+    close entrepots;
+
+    select res;
+
+end |
+delimiter ;
+
+call afficheEparDepartement()
 
 
 -- 6. Ajouter `a l’affichage pr ́ec ́edent, la valeur contenue dans chaque entrepˆot.
