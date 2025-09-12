@@ -1,3 +1,5 @@
+# TP 1
+
 ## Question 1
 
 Compléter le tableau suivant à partir du code qui vous est donné.
@@ -7,6 +9,4 @@ Département communes:list(Commune)
 départements: list(Département)
 Pays régions: list(region)
 
-
-## Question 2
-
+# TP 2

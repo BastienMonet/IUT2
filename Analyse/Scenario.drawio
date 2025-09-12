@@ -1,0 +1,43 @@
+<mxfile host="65bd71144e">
+    <diagram id="JJ_KuNY9lGasuVs4F47_" name="Page-1">
+        <mxGraphModel dx="520" dy="802" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="Acteur(s)" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="200" y="150" width="290" height="330" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="1. le propriétaire appuie sur le bouton &quot;déposer des fichiers&amp;nbsp;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="2">
+                    <mxGeometry y="30" width="230" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="4. le propriétaire rentre les fichier" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="2">
+                    <mxGeometry y="100" width="230" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="6. le propriétaire valide la saisi" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="2">
+                    <mxGeometry y="160" width="230" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Système" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="489" y="150" width="240" height="330" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="3. le système demande a l&#39;utilisateur de rentrer les fichier correspondant" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="4">
+                    <mxGeometry x="5" y="90" width="230" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="9. le système affiche &quot;fichier déposer&quot;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="4">
+                    <mxGeometry y="270" width="230" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="2. le sytème envoi l&#39;utilisateur sur la page corespondante" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="4">
+                    <mxGeometry x="5" y="50" width="230" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="7. le système verifie que les fichier n&#39;exèdent pas la taille max" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="4">
+                    <mxGeometry y="190" width="230" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="5 le système active le bouton envoyer" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="4">
+                    <mxGeometry y="140" width="230" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="8. le système télécharge les fichier dans le stockage BDD" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="4">
+                    <mxGeometry y="230" width="230" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
