@@ -101,25 +101,34 @@ call afficheEntrepot();
 
 delimiter |
 create or replace procedure afficheEparDepartement()
-begin
+begin 
     declare codeE int;
     declare nomE Varchar(30);
     declare departementE Varchar(30);
-    declare nbE int;
+    declare departementPrec Varchar(30) default ' ';
+    declare nbE int default 0;
     declare fini boolean default false;
     declare res Varchar(500) default ' ';
     declare entrepots cursor for
-        select code, nom, departement, count(*) from ENTREPOT group by departement;
+        select code, nom, departement from ENTREPOT order by departement ;
     declare continue handler for not found set fini = true ;
 
     open entrepots;
 
     while not fini do
-        fetch entrepots into codeE, nomE, departementE, nbE;
+        fetch entrepots into codeE, nomE, departementE;
         if not fini then
-            set res = concat(res, codeE, ' ', nomE, ' ', departementE, ' ', nbE, ' / ');
+        if departementPrec != departementE then
+            set nbE = nbE + 1;
+            set res = concat(res , 'soit un total de ', nbE , ' entrepot dans le departement : ', departementE, '\n');
+        else 
+            set nbE = 0;
+        end if;    
+            set res = concat(res,' ' ,codeE, '   ', nomE, '\n');
         end if;
+        set departementPrec = departementE;
     end while;
+
     close entrepots;
 
     select res;
@@ -127,10 +136,53 @@ begin
 end |
 delimiter ;
 
-call afficheEparDepartement()
+call afficheEparDepartement();
 
 
 -- 6. Ajouter `a l’affichage pr ́ec ́edent, la valeur contenue dans chaque entrepˆot.
+
+
+delimiter |
+create or replace procedure afficheEparDepartement()
+begin 
+    declare codeE int;
+    declare nomE Varchar(30);
+    declare departementE Varchar(30);
+    declare departementPrec Varchar(30) default ' ';
+    declare valeur float default 0;
+    declare nbE int default 0;
+    declare fini boolean default false;
+    declare res Varchar(500) default ' ';
+    declare entrepots cursor for
+        select code, nom, departement, sum(quantite * prix) from ENTREPOT natural join STOCKER natural join ARTICLE group by code order by departement ;
+    declare continue handler for not found set fini = true ;
+
+    open entrepots;
+
+    while not fini do
+        fetch entrepots into codeE, nomE, departementE, valeur;
+        if not fini then
+        if departementPrec != departementE then
+            set nbE = nbE + 1;
+            set res = concat(res , 'soit un total de ', nbE , ' entrepot dans le departement : ', departementE, '\n');
+        else 
+            set nbE = 0;
+        end if;    
+            set res = concat(res,' ' ,codeE, '   ', nomE, ' ', valeur, '\n');
+        end if;
+        set departementPrec = departementE;
+    end while;
+
+    close entrepots;
+
+    select res;
+
+end |
+delimiter ;
+
+call afficheEparDepartement();
+
+
 -- 7. Ecrire une fonction qui permet de stocker un nouvel article dans la table article ou de
 -- modifier le prix d’un article d ́ej`a existant. Par exemple majArticle(123, ’tuile17x27’,
 -- 3.55) modifiera le prix de l’article 123 s’il existe et qu’il correspond `a ’tuile 17x27’,
@@ -138,10 +190,73 @@ call afficheEparDepartement()
 -- pas dans la base ajouter un nouvel article en prenant comme r ́ef ́erence la plus grande
 -- des r ́ef ́erences pr ́esentes dans la base plus 1 `a la place de 123. La fonction retournera
 -- la r ́ef ́erence de l’article cr ́e ́e ou modifi ́e (-1 si erreur).
+
+delimiter |
+create or replace function majArticle(referenceA int, libelleA Varchar(30) , prixA float) returns int
+begin 
+    declare exist int default 0;
+    select reference into exist from ARTICLE where reference = referenceA;
+
+    if exist then
+        update ARTICLE set libelle = libelleA, prix = prixA where reference = referenceA;
+    else 
+        insert into ARTICLE values (referenceA, libelleA, prixA);
+    end if;
+    return referenceA;
+end |
+delimiter ;
+
+
+select majArticle(1, 'bla', 0.12);
+
+
 -- 8. Ecrire une fonction entrerStock(refA int, codeE int, qte int) qui augmente le
 -- stock de l’article refA dans l’entrepˆot codeE de qte. Retourne la nouvelle quantit ́e de
 -- l’article (-1) quand l’article ou l’entrepˆot n’existe pas.
+
+delimiter |
+create or replace function entrerStock(refA int, codeE int, qte int) returns float
+begin
+    declare nouvQte float default 0;
+    select quantite into nouvQte from STOCKER where reference = refA and code = codeE;
+    if nouvQte then 
+        set nouvQte = nouvQte + qte;
+        update STOCKER set quantite = nouvQte where code = codeE and reference = refA;
+        return nouvQte;
+    else 
+        return -1;
+    end if;
+end |
+delimiter ;
+
+select entrerStock(1, 1, 6);
+
+
+
 -- 9. Ecrire une fonction sortirStock(refA int, codeE int, qte int) qui diminue le
 -- stock de l’article refA dans l’entrepˆot codeE de qte. La quantit ́e `a sortir est limit ́ee `a
 -- la quantit ́e pr ́esente. Retourne la quantit ́e r ́eellement sortie.
 
+delimiter |
+create or replace function entrerStock(refA int, codeE int, qte int) returns float
+begin
+    declare nouvQte float default 0;
+    select quantite into nouvQte from STOCKER where reference = refA and code = codeE;
+    if nouvQte then 
+        set nouvQte = nouvQte - qte;
+        if nouvQte < 0 then
+            return -1;
+        elseif nouvQte = 0 then
+            delete from STOCKER where code = codeE and reference = refA;
+            return nouvQte;
+        else 
+            update STOCKER set quantite = nouvQte where code = codeE and reference = refA;
+            return nouvQte;
+        end if;
+    else 
+        return -1;
+    end if;
+end |
+delimiter ;
+
+select entrerStock(1, 1, 6);

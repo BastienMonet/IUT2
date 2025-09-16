@@ -45,14 +45,37 @@ class Arbre:
     def nbre_ni(self):
         return self.nbre_noeud() - self.nbre_feuille() - 1
     
-    def hauteur(self):
-        maxi = 0
+    def hauteur(self, hauteur):
+        maxi = hauteur
         curr = 0
         for enfant in self.enfants():
-            curr = enfant.nbre_noeud()
+            curr = enfant.hauteur(hauteur + 1)
+            maxi = max(maxi,curr)
+        return maxi
+    
+    def hauteur2(self):
+        if not self.enfants():
+            return 0
+        else:
+            h = 0
+            for e in self.enfants():
+                h = max(h, e.hauteur2())
+            return h + 1
+    
+    def deg(self):
+        maxi = len(self.enfants())
+        curr = 0
+        for enfant in self.enfants():
+            curr = enfant.deg()
             maxi = max(maxi,curr)
         return maxi
         
+
+    def max_etiquette(self):
+        maxi = self.etiquette()
+        for e in self.enfants():
+            maxi = max(maxi, e.max_etiquette())
+        return maxi
             
 if __name__ == "__main__":
     a1 = Arbre.Feuille(1)
@@ -69,5 +92,8 @@ if __name__ == "__main__":
     print(a1)
     print(a1.nbre_noeud())
     print(a1.nbre_ni())
-    print(a1.hauteur())
+    print(a1.deg())
+    print(a1.hauteur(0))
+    print(a1.hauteur2())
+    print(a1.max_etiquette())
 
