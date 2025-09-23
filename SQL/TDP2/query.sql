@@ -260,3 +260,55 @@ end |
 delimiter ;
 
 select entrerStock(1, 1, 6);
+
+
+-- 1. On ne veut pas avoir plusieurs entrepˆots avec le mˆeme nom dans le mˆeme d ́epartement.
+
+delimiter |
+create or replace trigger nomUniqueDepartement before insert on ENTREPOT for each row
+begin
+    declare nomD Varchar(50);
+    declare mes Varchar(100) default ' ';
+    select nom into nomD from ENTREPOT where departement = NEW.departement and nom = NEW.nom limit 1;
+    if nomD is not NULL then
+        set mes = concat( 'inscription impossible') ;
+        signal SQLSTATE '45000' set MESSAGE_TEXT = mes ;
+    end if;
+end |
+delimiter ;
+
+-- insert into ENTREPOT values(4, 'Orléans nord', 'Loiret');
+
+-- 2. On ne veut pas plus de trois entrepˆots dans un mˆeme d ́epartement.
+
+delimiter |
+create or replace trigger pasPlusDe3 before insert on ENTREPOT for each row
+begin
+    declare nb int;
+    declare mes Varchar(100) default ' ';
+    select ifnull(count(*), 0) into nb from ENTREPOT where departement = NEW.departement;
+    if nb >= 3 then
+        set mes = concat( 'inscription impossible') ;
+        signal SQLSTATE '45000' set MESSAGE_TEXT = mes ;
+    end if;
+end |
+delimiter ;
+
+-- 3. A chaque fois que le stock d’un article est modifi ́e (`a la hausse ou `a la baisse), on veut
+-- conserver une trace de la mise `a jour
+
+
+delimiter |
+create or replace trigger metDansLhisto after update on STOCKER for each row
+begin
+    declare mes Varchar(100) default ' ';
+    if OLD.quantite > NEW.quantite then
+        set mes = concat('retrait de ', OLD.quantite - NEW.quantite);
+    else
+        set mes = concat('ajout de ', NEW.quantite - OLD.quantite);
+    end if;
+    insert into HISTORIQUE(mess, dateMess) VALUES (mes, CURDATE());
+end |
+delimiter ;
+
+update STOCKER set quantite = 4 where reference = 1 and code = 1;

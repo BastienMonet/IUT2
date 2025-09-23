@@ -10,7 +10,7 @@ select * from SALLE natural join RESERVER where capacite < nbpers;
 -- 3. ⋆⋆ ´Ecrire une requˆete pour afficher les r´eservations dont le type de l’occupant n’est
 -- pas compatible avec les types disponibles pour la salle r´eserv´ee.
 
-select * from RESERVER natural join OCCUPANT natural join SALLE S2 
+select * from RESERVER natural join OCCUPANT natural join SALLE S1
 where OCCUPANT.idt not in (select idt from ETRE_DISPONIBLE_POUR natural join SALLE S2 where S1.ids = S2.ids);
 
 -- 4. ⋆⋆ ´Ecrire une requˆete pour afficher les couples de r´eservations diff´erentes qui se che-

@@ -37,8 +37,6 @@ Create table if not exists Reserver (
     constraint horaire check (heureDebut + duree <= 24)
 );
 
-
-
 alter table Reserver add foreign key (nomSalle) references Salle(nomSalle);
 alter table Reserver add foreign key (idO) references Occupant(idO);
 
