@@ -14,7 +14,7 @@ class Personne:
         return self.lesenfants.append(nouvel_enfant)
     
     def etait_vivant(self, date):
-        return date < self.naissance and (date > self.mort or self.mort is None)
+        return date > self.naissance and (date < self.mort or self.mort is None)
     
 
 def mystere(personne):
@@ -29,13 +29,27 @@ def mystere(personne):
     return vivants
     
 def plus_jeune_dans_la_famille(personne):
-    plus_jeune = Personne
+    plus_jeune = personne
     for e in personne.enfants:
         minot = plus_jeune_dans_la_famille(e)
         if minot.naissance > plus_jeune.naissance:
             plus_jeune = minot
         return plus_jeune
+    
+
+def heritier(personne, date):
+    if not personne.etait_vivant(date):
+        for enfant in personne.enfant:
+            fam = heritier(enfant, date)
+            if fam != None:
+                return fam
+        return None
+    else:
+        return personne.nom
 
 
-# question 9
 
+# def heritier(Cesar , 1850) -> Cesar
+# def heritier(Cesar , 1939) -> Elise
+# def heritier(Cesar , 1990) -> None
+# def heritier(Cesar , 1938) -> Hildegate
