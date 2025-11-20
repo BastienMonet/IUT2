@@ -5,6 +5,7 @@ IT : TIC, technologie de l'info et de la com
 
 IS : SI, système d'info
 
+
 ### Exercice 1
 1) Quels éléments dans le texte pouvez-vous associer aux TIC ?
 * SNCF Connect

@@ -13,6 +13,22 @@ public class Employe {
         this.dateRecrutement = dateRecrutement;
     }
 
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setDateRecrutement(String dateRecrutement) {
+        this.dateRecrutement = dateRecrutement;
+    }
+
     public String getNom() {
         return nom;
     }
@@ -27,5 +43,9 @@ public class Employe {
 
     public String getDateRecrutement() {
         return dateRecrutement;
+    }
+
+    public String toString() {
+        return this.nom + " " + this.prenom;
     }
 }

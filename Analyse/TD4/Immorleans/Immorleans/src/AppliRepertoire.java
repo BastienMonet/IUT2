@@ -11,7 +11,7 @@ import javafx.stage.Stage;
  */
 public class AppliRepertoire extends Application {
     
-    private final String nomFichier = "data/RepertoireEmployes_ImmOrleans.csv";
+    private final String nomFichier = "RepertoireEmployes_ImmOrleans.csv";
     private Button bEmployes;
     private Button bRetour;
     private Button bSauvegarder;

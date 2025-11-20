@@ -1,0 +1,20 @@
+format 224
+
+classcanvas 128126 class_ref 128126 // Compte
+  classdiagramsettings member_max_width 0 end
+  xyz 12.9 123.9 2000
+end
+classcanvas 128254 class_ref 128254 // Client
+  classdiagramsettings member_max_width 0 end
+  xyz 20 400.8 2000
+end
+classcanvas 130430 class_ref 128382 // myBank
+  classdiagramsettings member_max_width 0 end
+  xyz 276.6 360 2000
+end
+relationcanvas 130302 relation_ref 128510 // <directional aggregation>
+  from ref 128254 z 2001 stereotype "<<list>>" xyz 105.5 363.5 3000 to ref 128126
+  role_a_pos 137 330 3000 no_role_b
+  multiplicity_a_pos 118 330 3000 no_multiplicity_b
+end
+end

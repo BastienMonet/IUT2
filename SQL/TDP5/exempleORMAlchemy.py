@@ -6,8 +6,9 @@ from sqlalchemy.sql.schema import ForeignKey
 from sqlalchemy import func
 import time
 from datetime import date
+import sqlalchemy
 
-from sqlalchemy.orm import registry
+from sqlalchemy.orm import registry, joinedload
 mapper_registry = registry()
 Base = mapper_registry.generate_base()
 # Base class used by my classes (my entities)
@@ -202,7 +203,6 @@ def loaddb(engine, filename):
 	Base.metadata.create_all(engine)
 	session = Session(engine)
     
-    
 	# importation des données à partir de yaml
 	import yaml
 	data = yaml.safe_load(open(filename))
@@ -307,9 +307,37 @@ if __name__ == '__main__':
 	# quelle BD va-t-on utiliser?
 	#engine = create_engine('sqlite:///animation.db', echo=False) 
 	# iut mysql
-	engine=create_engine('mysql://chabin:chabin@servinfo-maria/DBchabin')
+	engine=create_engine('mysql://monet:monet@servinfo-maria/DBmonet')
 	#sur machine locale
 	#engine=create_engine('mysql://chabin:chabin@localhost/DBchabin')
 
 	#ormTest(engine)
-	loadbdTest(engine)
+	from article import Article, Entrepot, Stocker
+
+	print( "--- Suppression de toutes les tables de la BD ---" )
+	Base.metadata.drop_all(bind=engine)
+    
+	print( "--- Construction des tables de la BD ---" )
+	Base.metadata.create_all(engine)
+	session = Session(engine)
+	# article9 = Article(9, "ta mère", 50.00)
+	# session.add(article9)
+	# session.commit()
+
+
+	def article_dans_entrepot(code):
+		req = session.query(Stocker).filter(Stocker.code == code).all()
+		list = []
+		for stock in req:
+			req2 = session.query(Article).filter(Article.reference == stock.reference).first()
+			list.append(req2)
+		return list
+	
+	print(article_dans_entrepot(1))
+
+	# a = session.get(Article, 9)
+	# session.delete(a)
+	# session.commit()
+
+
+

@@ -1,0 +1,14 @@
+window_sizes 950 1021 399 545 864 104
+cleanlooks_style
+diagrams
+  active  classdiagram_ref 128126 // diagramme1
+    1171 699 130 A4 110 0
+end
+show_stereotypes
+selected deploymentview_ref 128126 // vue1
+open
+  class_ref 128126 // Compte
+  class_ref 128254 // Client
+  class_ref 128382 // myBank
+end
+end
