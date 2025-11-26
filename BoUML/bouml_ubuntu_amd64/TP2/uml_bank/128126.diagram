@@ -1,0 +1,29 @@
+format 224
+
+classcanvas 128126 class_ref 128126 // Bank
+  classdiagramsettings member_max_width 0 end
+  xyz 384 519 2000
+end
+classcanvas 128254 class_ref 128254 // Client
+  classdiagramsettings member_max_width 0 end
+  xyz 73 418 2000
+end
+classcanvas 128382 class_ref 128382 // Compte
+  classdiagramsettings member_max_width 0 end
+  xyz 53 79 3005
+end
+classcanvas 128638 class_ref 130046 // Operation
+  classdiagramsettings member_max_width 0 end
+  xyz 436 145 2000
+end
+relationcanvas 128510 relation_ref 128126 // <unidirectional association>
+  from ref 128254 z 3006 stereotype "<<List>>" xyz 180 373 3006 to ref 128382
+  role_a_pos 212 335 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128766 relation_ref 128766 // <unidirectional association>
+  from ref 128382 z 3006 stereotype "<<list>>" xyz 369.5 209 3000 to ref 128638
+  role_a_pos 369 194 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

@@ -1,0 +1,15 @@
+window_sizes 950 1021 253 691 864 104
+cleanlooks_style
+diagrams
+  active  classdiagram_ref 128126 // uml_diagramme
+    1075 612 100 A4 48 0
+end
+show_stereotypes
+open
+  class_ref 128126 // Bank
+  class_ref 128254 // Client
+  class_ref 128382 // Compte
+  class_ref 130046 // Operation
+  deploymentview_ref 128126 // src
+end
+end

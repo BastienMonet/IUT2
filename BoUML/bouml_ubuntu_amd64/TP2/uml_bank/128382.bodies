@@ -1,0 +1,42 @@
+class Compte
+!!!129150.java!!!	Compte(in numero : String, in solde : float)
+      this.operations = new ArrayList<>();
+      this.numero=numero;
+      this.solde=solde;
+!!!129278.java!!!	setSolde(in val : float) : void
+        this.solde = val;
+!!!129406.java!!!	getSolde() : float
+        return this.solde;
+!!!129534.java!!!	setNumero(in num : String) : void
+        this.numero = num;
+!!!129662.java!!!	getNumero() : String
+        return this.numero;
+!!!129790.java!!!	setDecouvertAutorise(in val : float) : void
+        this.decouvertAutorise = val;
+!!!129918.java!!!	getDecouvertAutorise() : float
+        return this.decouvertAutorise;
+!!!130046.java!!!	debiter(in montant : float, in info : String) : boolean
+        if(montant>0){
+            float res = this.solde-montant;
+            if(res>=this.decouvertAutorise){ // vérification solde après opératioin
+                this.solde = res;
+                Operation op = new Operation(new Date(), -1 * solde);
+                ajouterOperation(op);
+                return true;
+            }
+        }
+        return false;
+!!!130174.java!!!	crediter(in montant : float, in info : String) : boolean
+        if(montant>0){
+            this.solde += montant;
+            Operation op = new Operation(new Date(), solde);
+            ajouterOperation(op);
+            return true;
+        }
+        return false;
+!!!130302.java!!!	toString() : String
+        return "je suis le compte bancaire numero " + numero + "avec le solde " + solde;
+!!!138878.java!!!	getHistorique() : Operation
+      return operations;
+!!!139134.java!!!	ajouterOperation(in op : Operation) : void
+     operations.add(op);

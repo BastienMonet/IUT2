@@ -35,7 +35,17 @@
     <?php
         echo "Détails du produit sélectionné ici.";
         echo "<h2>". $product["title"] . "</h2>";
-        echo "<p> ". $product["description"] ."</p>"
+        echo "<p> ". $product["description"] ."</p>";
+
+
+
+        echo <<<FORM
+            <form action="panier.php" method="post">
+                <input type="hidden" name="cart[id]" value="{$product['id']}"/>
+                <input type="number" id="quantity" name="cart[id]" value="1" min="1"/>
+                <button type="submit">Ajouter au panier</button>
+            </form>
+        FORM;
     ?>
     <a href="index.php">retour</a>
 </body>

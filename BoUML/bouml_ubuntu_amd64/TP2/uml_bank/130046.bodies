@@ -1,0 +1,11 @@
+class Operation
+!!!149630.java!!!	getDate() : Date
+    return date;
+!!!149758.java!!!	setDate(inout value : Date) : void
+    date = value;
+!!!149886.java!!!	getMontant() : float
+    return montant;
+!!!150014.java!!!	setMontant(in value : float) : void
+    montant = value;
+!!!150142.java!!!	toString() : String
+    return date + " " + montant;
