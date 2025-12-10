@@ -1,0 +1,17 @@
+class Compte
+!!!133502.java!!!	Compte(in numero : String)
+    this.numero = numero;
+    this.solde = 0.0;
+    this.decouvertAutorise = 0.0;
+!!!133630.java!!!	getSolde() : double
+    return solde;
+!!!133758.java!!!	setSolde(in value : double) : void
+    solde = value;
+!!!133886.java!!!	getDecouvertAutorise() : double
+    return decouvertAutorise;
+!!!134014.java!!!	setDecouvertAutorise(in value : double) : void
+    decouvertAutorise = value;
+!!!134142.java!!!	getNumero() : String
+    return numero;
+!!!134270.java!!!	setNumero(in value : String) : void
+    numero = value;

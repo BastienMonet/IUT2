@@ -1,0 +1,17 @@
+class EtatFinal
+!!!130174.java!!!	EtatFinal()
+    super();
+!!!130302.java!!!	trouverMotEx2(in mot : String) : boolean
+    if (mot.equals("$")){
+      return true;
+    }else {
+      return false;
+    }
+!!!130430.java!!!	trouverMotEx1(in mot : String) : boolean
+    if (mot.equals("")){
+      return true;
+    }else {
+      return false;
+    }
+!!!130558.java!!!	trouverMotEx3(in mot : String) : boolean
+    return false;

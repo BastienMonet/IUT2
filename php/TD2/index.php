@@ -19,11 +19,11 @@ $parsedData = getProduct();?>
             
             $marques = getListMarque($parsedData);
 
-            echo "<input type=\"radio\" id=\"brand\" name=\"brand\" value=\"\">";
+            var_dump($marques);
 
             foreach ($marque as $marques) {
-                echo " <input type='radio' id='brand' name='brand' value=".$marques.">";
-                echo " <label for=''>".$marques."</label>";
+                echo " <input type='radio' id='brand' name='brand' value=".$marque.">";
+                echo " <label for=''>".$marque."</label>";
             }
 
         ?>

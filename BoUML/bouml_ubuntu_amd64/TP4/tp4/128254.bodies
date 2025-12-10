@@ -1,0 +1,71 @@
+class Etat
+!!!129022.java!!!	Etat()
+    transitions = new ArrayList<>();
+!!!129150.java!!!	ajoute(inout t : Transition) : void
+    transitions.add(t);
+!!!129278.java!!!	trouverMotEx2(in mot : String) : boolean
+    boolean res = false ;
+    for (Transition t : this.transitions){
+      char c = t.getSymbole();
+      Etat e = t.getEtatFinal();
+      boolean plus = mot.charAt(1) == '+';
+      if (plus){
+        if (mot.length() >= 3 && c == mot.charAt(2)){
+          mot.substring(3);
+          res = res || e.trouverMotEx2(mot);
+        }
+        if (c == mot.charAt(0)){
+          res = res || e.trouverMotEx2(mot);
+        }
+      } else if (c == mot.charAt(0)){
+        
+        mot.substring(1);
+        res = res || e.trouverMotEx2(mot);
+      }
+      if (res == true) {
+          break;
+        }
+    }
+    return res;
+!!!129406.java!!!	trouverMotEx1(in mot : String) : boolean
+    boolean res = false ;
+    for (Transition t : this.transitions){
+      if (res) {
+        break;
+      }
+      char c = t.getSymbole();
+      Etat e = t.getEtatFinal();
+      if (c == mot.charAt(0)){
+        mot.substring(1);
+        res = res || e.trouverMotEx2(mot);
+        if (res == true) {
+          break;
+        }
+      }
+    }
+    return res;
+!!!129534.java!!!	trouverMotEx3(in mot : String, in dernierSymbole : char, in contient : int) : boolean
+    boolean res = false;
+    for (Transition t : this.transitions){
+      char c = t.getSymbole();
+      Etat e = t.getEtatFinal();
+      if (contient == 0){
+        if ((String.valueOf(dernierSymbole) + String.valueOf(c)).equals("GT")){
+          contient++;
+        }
+      } else if (contient == 1){
+        if ((String.valueOf(dernierSymbole) + String.valueOf(c)).equals("AG")){
+          contient++;
+        }
+      }
+      if (contient == 2) {
+        return true;
+      }
+      mot.substring(1);
+      res = res || e.trouverMotEx3(mot, c, contient);
+      if (res == true) {
+        break;
+      }
+      
+    }
+    return res;

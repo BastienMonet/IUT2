@@ -1,0 +1,17 @@
+class Automate
+!!!129662.java!!!	Automate(inout etatDepart : Etat)
+    EtatDepart = etatDepart;
+!!!129790.java!!!	analyseMotEx2(in mot : String) : boolean
+    if (mot.charAt(0) == '^' && mot.charAt(mot.length()-1) == '$'){
+      mot.substring(1);
+      return this.getEtatDepart().trouverMotEx2(mot);
+    } else {
+      return false;
+    }
+    
+!!!129918.java!!!	analyseMotEx1(in mot : String) : boolean
+      return this.getEtatDepart().trouverMotEx1(mot);
+!!!130046.java!!!	analyseMotEx3(in mot : String) : boolean
+      return this.getEtatDepart().trouverMotEx3(mot, ' ', 0);
+!!!128638.java!!!	getEtatDepart() : Etat
+    return EtatDepart;

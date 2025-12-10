@@ -1,0 +1,17 @@
+class CompteDepot
+!!!130814.java!!!	CompteDepot(in numero : String, in solde : float)
+    super(numero, solde);
+!!!130942.java!!!	debiter(in montant : float, in info : String) : boolean
+    this.solde = this.solde - montant;
+    this.historique.add(0, new Operation(new Date(), -montant));
+    this.notiferObs(info + " " + montant + "$");
+    return true;
+!!!131070.java!!!	getTauxInteret() : double
+    return tauxInteret;
+!!!131198.java!!!	setTauxInteret(in value : double) : void
+    tauxInteret = value;
+!!!131326.java!!!	toString() : String
+    String res = "\tCompte de dépôt n. : " + this.numero + "\n";
+           res +="\tTaux d'intérêt     : " + CompteDepot.tauxInteret + "\n"; 
+           res+= "\tSolde du compte    : " + this.solde + "\n";
+    return  res;

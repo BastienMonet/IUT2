@@ -1,0 +1,10 @@
+class Terminal
+!!!132222.java!!!	Terminal(in title : String)
+    super(title);
+    this.setSize(400, 200);
+    this.message = new JLabel("Compte ok");
+    this.add(this.message);
+    this.setVisible(true);
+    this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+!!!142846.java!!!	notification(in info : String) : void
+    this.message.setText(info);

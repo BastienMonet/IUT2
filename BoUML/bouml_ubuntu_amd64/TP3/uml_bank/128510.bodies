@@ -1,0 +1,15 @@
+class Operation
+!!!131454.java!!!	Operation(inout date : Date, in montant : float)
+    this.date = date;
+    this.montant = montant;
+!!!131582.java!!!	toString() : String
+    String res = "  " + this.date + " | " + this.montant;
+    return res;
+!!!131710.java!!!	getDate() : Date
+    return date;
+!!!131838.java!!!	setDate(inout value : Date) : void
+    date = value;
+!!!131966.java!!!	getMontant() : float
+    return montant;
+!!!132094.java!!!	setMontant(in value : float) : void
+    montant = value;

@@ -1,0 +1,13 @@
+class Client
+!!!132862.java!!!	Client(in nom : String)
+    this.nom = nom;
+    this.comptes = new ArrayList<>();
+!!!132990.java!!!	ajouterCompte(inout compte : Compte) : void
+    comptes.add(compte);
+!!!133118.java!!!	getNom() : String
+    return nom;
+!!!133246.java!!!	setNom(in value : String) : void
+    nom = value;
+!!!133374.java!!!	to_string() : String
+    super.toString();
+    return nom;

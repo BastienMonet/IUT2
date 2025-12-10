@@ -1,0 +1,8 @@
+class Transition
+!!!130814.java!!!	Transition(inout etatFinal : Etat, in symbole : char)
+    this.etatFinal = etatFinal;
+    this.symbole = symbole;
+!!!128766.java!!!	getSymbole() : char
+    return symbole;
+!!!128894.java!!!	getEtatFinal() : Etat
+    return etatFinal;

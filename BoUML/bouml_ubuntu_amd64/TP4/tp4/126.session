@@ -1,0 +1,17 @@
+window_sizes 950 1021 450 494 864 104
+cleanlooks_style
+diagrams
+  active  classdiagram_ref 128126 // classDiagram
+    494 864 70 A4 0 0
+end
+show_stereotypes
+selected 
+  package_ref 129 // tp4
+open
+  class_ref 128126 // Automate
+  class_ref 128254 // Etat
+  class_ref 128382 // Transition
+  class_ref 128510 // EtatFinal
+  deploymentview_ref 128254 // diagramtp4
+end
+end

@@ -1,0 +1,26 @@
+class Compte
+!!!139390.java!!!	Compte(in numero : String, in solde : float)
+      super();
+      this.numero=numero;
+      this.solde=solde;
+      this.historique = new ArrayList<Operation>();
+      this.addObservateur(new Terminal("hello compte"));
+!!!139518.java!!!	setSolde(in val : float) : void
+        this.solde = val;
+!!!139646.java!!!	getSolde() : float
+        return this.solde;
+!!!139774.java!!!	setNumero(in num : String) : void
+        this.numero = num;
+!!!139902.java!!!	getNumero() : String
+        return this.numero;
+!!!140158.java!!!	crediter(in montant : float, in info : String) : boolean
+        if(montant>0){
+            this.solde += montant;
+            this.historique.add(0, new Operation(new Date(), montant));
+            this.notiferObs(info + " " + montant + "$");
+            return true;
+        }
+        return false;
+!!!140286.java!!!	afficherHistorique() : void
+      System.out.println("----- Historique -----\n");
+      for(Operation op:this.historique) System.out.println(op);

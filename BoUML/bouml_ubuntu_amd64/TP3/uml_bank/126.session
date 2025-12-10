@@ -1,0 +1,17 @@
+window_sizes 950 1021 450 494 864 104
+cleanlooks_style
+diagrams
+  active  classdiagram_ref 128126 // diagram
+    1456 849 83 A2 0 0
+end
+show_stereotypes
+marked
+  classrelation_ref 128766 // Observateurs (<unidirectional association>)
+end
+selected 
+  package_ref 129 // uml_bank
+open
+  class_ref 129278 // Observable
+  deploymentview_ref 128126 // src
+end
+end

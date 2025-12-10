@@ -1,0 +1,7 @@
+class Observable
+!!!132350.java!!!	addObservateur(in obs : IObservateur) : void
+    this.observateurs.add(obs);
+!!!132478.java!!!	notiferObs(in message : string) : void
+    for (IObservateur observateur : this.observateurs) {
+      observateur.notification(message);
+    }

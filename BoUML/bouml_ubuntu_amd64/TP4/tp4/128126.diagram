@@ -1,0 +1,36 @@
+format 224
+
+classcanvas 128126 class_ref 128126 // Automate
+  classdiagramsettings member_max_width 0 end
+  xyz 37 105 2000
+end
+classcanvas 128254 class_ref 128254 // Etat
+  classdiagramsettings member_max_width 0 end
+  xyz 12 313.2 2000
+end
+classcanvas 128382 class_ref 128382 // Transition
+  classdiagramsettings member_max_width 0 end
+  xyz 120.9 776 2000
+end
+classcanvas 129150 class_ref 128510 // EtatFinal
+  classdiagramsettings member_max_width 0 end
+  xyz 378.1 101.8 2000
+end
+relationcanvas 128638 relation_ref 128254 // <unidirectional association>
+  decenter_end 486
+  from ref 128126 z 2001 to ref 128254
+  role_a_pos 245 293 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129022 relation_ref 128382 // <association>
+  from ref 128254 z 2001 stereotype "<<List>>" xyz 228 563.5 3000 to point 252.5 692
+  line 129406 z 2001 to ref 128382
+  role_a_pos 273 751 3000 role_b_pos 257 428 3000
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129278 relation_ref 128510 // <generalisation>
+  from ref 129150 z 2001 to ref 128254
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end
