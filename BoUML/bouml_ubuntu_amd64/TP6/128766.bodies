@@ -1,0 +1,13 @@
+class Automate
+!!!130942.java!!!	Automate(inout control : X)
+    this.e = new Etat1();
+    this.controle = control;
+
+!!!131070.java!!!	getControle() : X
+    return controle;
+!!!129022.java!!!	setEtatCourant(inout etat : IEtat) : void
+    this.e = etat;
+!!!129150.java!!!	event1() : void
+    this.e.event1(this);
+!!!129278.java!!!	event2() : void
+    this.e.event2(this);

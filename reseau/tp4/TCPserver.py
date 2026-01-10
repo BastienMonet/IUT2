@@ -2,6 +2,7 @@
 
 import socket
 from threading import Thread
+from threading import Lock
 
 class Server:
     def __init__(self):
@@ -28,6 +29,7 @@ class Session(Thread):
         self.socket = sock
         self.file = sock.makefile(mode="rw")
         self.addr = addr
+        self.lock = Lock()
 
     def run(self):
         while True:
@@ -42,9 +44,9 @@ class Session(Thread):
             if len(line.split()) == 2:
                 command, nbre = line.split()
                 if command == "incr":
-                    # self.server.lock
+                    self.lock.acquire()
                     self.server.counter+=int(nbre)
-                    # self.server.unlock
+                    self.lock.release()
                     self.file.write(f"new val {self.server.counter}\n")
                     self.file.flush()
 

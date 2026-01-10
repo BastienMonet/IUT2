@@ -1,0 +1,76 @@
+format 224
+
+classcanvas 128126 class_ref 128126 // Operation
+  classdiagramsettings member_max_width 0 end
+  xyz 184 122 2000
+end
+classcanvas 128254 class_ref 128254 // Addition
+  classdiagramsettings member_max_width 0 end
+  xyz 404 307 2000
+end
+classcanvas 128382 class_ref 128382 // Nombre
+  classdiagramsettings member_max_width 0 end
+  xyz 28 208 2000
+end
+classcanvas 129150 class_ref 128510 // main
+  classdiagramsettings member_max_width 0 end
+  xyz 543 42 2000
+end
+classcanvas 129278 class_ref 128638 // OperationBinaire
+  classdiagramsettings member_max_width 0 end
+  xyz 264 224 2000
+end
+classcanvas 129918 class_ref 128766 // Multiplication
+  classdiagramsettings member_max_width 0 end
+  xyz 279 322 2000
+end
+classcanvas 130046 class_ref 128894 // division
+  classdiagramsettings member_max_width 0 end
+  xyz 694 274 2000
+end
+classcanvas 130174 class_ref 129022 // soustraction
+  classdiagramsettings member_max_width 0 end
+  xyz 577 282 2005
+end
+classcanvas 130686 class_ref 128638 // OperationBinaire
+  classdiagramsettings member_max_width 0 end
+  xyz 550.5 212.5 2000
+end
+relationcanvas 128510 relation_ref 128126 // <generalisation>
+  from ref 128382 z 2001 to ref 128126
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129406 relation_ref 128510 // <generalisation>
+  from ref 129278 z 2001 to ref 128126
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129534 relation_ref 128638 // <generalisation>
+  from ref 128254 z 2001 to ref 129278
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130430 relation_ref 128766 // <composition>
+  from ref 129278 z 2001 stereotype "<<list>>" xyz 353 187 3000 to point 372 149
+  line 130558 z 2001 to ref 128126
+  role_a_pos 324 121 3000 no_role_b
+  multiplicity_a_pos 298 157 3000 no_multiplicity_b
+end
+relationcanvas 130942 relation_ref 129022 // <association>
+  decenter_begin 714
+  from ref 130686 z 2001 to point 705 148
+  line 131198 z 2001 to point 248 27
+  line 131966 z 2001 to ref 128126
+  role_a_pos 186 101 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131326 relation_ref 129150 // <association>
+  from ref 130686 z 2001 to point 657 173
+  line 131582 z 2001 to point 656 170
+  line 131454 z 2001 to point 299 49
+  line 132094 z 2001 to ref 128126
+  role_a_pos 268 104 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

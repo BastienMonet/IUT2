@@ -1,0 +1,15 @@
+window_sizes 1920 1031 450 1464 874 104
+cleanlooks_style
+diagrams
+  active  classdiagram_ref 128126 // uml
+    1458 699 100 A4 0 0
+end
+show_stereotypes
+open
+  class_ref 128126 // Operation
+  class_ref 128254 // Addition
+  class_ref 128382 // Nombre
+  class_ref 128638 // OperationBinaire
+  deploymentview_ref 128126 // diagram
+end
+end

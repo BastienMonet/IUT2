@@ -1,0 +1,40 @@
+class Chrono
+!!!128254.java!!!	Chrono(inout proprietaire : JComponent, in duree : int, in x : int, in y : int, in diametre : int)
+		this.duree = duree * 1000;
+		this.x = x;
+		this.y = y;
+		this.diametre = diametre;
+		this.proprietaire = proprietaire;
+!!!128382.java!!!	lancerChrono() : void
+		deroulement = new Thread(this);
+		deroulement.start();
+!!!128510.java!!!	stopperChrono() : void
+        suspendu=false;
+        finir = true;
+        notifyAll();
+!!!128638.java!!!	run() : void
+		Thread.currentThread().setPriority(Thread.MIN_PRIORITY);
+		finir = false;
+		momentDebut = System.currentTimeMillis();
+		while((tempsEcoule < duree) && (!finir))
+		{
+			tempsEcoule = System.currentTimeMillis() - 
+			momentDebut;
+			proprietaire.repaint(new Rectangle(x, y, diametre, diametre));
+			try {
+				Thread.sleep(200);
+				synchronized(this) {
+					while (suspendu && !finir) wait();
+				}
+			}
+			catch(InterruptedException e){
+				e.printStackTrace();
+			}
+		}
+!!!128766.java!!!	dessine(inout g : Graphics) : void
+		g.setColor(Color.GRAY);
+		g.fillArc(x, y, diametre, diametre, 90,
+				(int)(360 - tempsEcoule * 360 / duree));
+		g.setColor(Color.RED);
+		g.fillArc(x, y, diametre, diametre,90,
+				(int)(-tempsEcoule * 360 / duree));

@@ -1,0 +1,9 @@
+class Etat2
+!!!129918.java!!!	event1(inout a : Automate) : void
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'event1'");
+!!!130046.java!!!	event2(inout a : Automate) : void
+        a.setEtatCourant(new Etat1());
+        System.out.println("je passe a l'event 1");
+        a.getControle().action2();
+

@@ -1,0 +1,11 @@
+class Addition
+!!!128638.java!!!	Addition()
+    super();
+    operations = new ArrayList<>();
+
+!!!128766.java!!!	evaluer() : float
+    float som = 0;
+    for (Operation o : operations){
+      som += o.evaluer();
+    }
+    return som;

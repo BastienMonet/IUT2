@@ -1,0 +1,6 @@
+class Nombre
+!!!128894.java!!!	Nombre(in valeur : float)
+    super();
+    this.valeur = valeur;
+!!!129022.java!!!	evaluer() : float
+    return valeur;

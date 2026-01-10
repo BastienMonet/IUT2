@@ -1,0 +1,15 @@
+window_sizes 950 1021 450 494 864 104
+cleanlooks_style
+diagrams
+  active  classdiagram_ref 128126 // d6
+    1075 612 100 A4 0 0
+end
+show_stereotypes
+selected class_ref 129534 // X
+open
+  classview_ref 128126 // diagram6
+  deploymentview_ref 128126 // diagram6
+  classview_ref 128254 // src
+  deploymentview_ref 128254 // src
+end
+end

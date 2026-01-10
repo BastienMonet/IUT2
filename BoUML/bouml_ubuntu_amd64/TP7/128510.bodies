@@ -1,0 +1,18 @@
+class IHMChrono
+!!!128894.java!!!	IHMChrono(in duree : int)
+		setPreferredSize(new Dimension(500,300));
+		setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
+		chrono = new Chrono(this, duree, 200, 120, 100);		
+		bgo.addActionListener(this);
+		bstop.addActionListener(this);
+		add(bgo);
+		add(bstop);
+		setVisible(true);
+!!!129022.java!!!	actionPerformed(inout evt : ActionEvent) : void
+		Object source = evt.getSource();
+
+		if (source == bgo) chrono.go();
+        else if  (source == bstop) chrono.stop();
+!!!129150.java!!!	paintComponent(inout g : Graphics) : void
+		super.paintComponent(g);
+		chrono.dessine(g);

@@ -1,0 +1,14 @@
+class X
+!!!131198.java!!!	X()
+    controleur = new Automate(this);
+!!!130302.java!!!	getControleur() : Automate
+        return controleur;
+!!!130430.java!!!	action1() : void
+    System.out.println("action1");
+
+!!!130558.java!!!	action2() : void
+    System.out.println("action2");
+!!!130686.java!!!	event1() : void
+    getControleur().event1();
+!!!130814.java!!!	event2() : void
+    getControleur().event2();

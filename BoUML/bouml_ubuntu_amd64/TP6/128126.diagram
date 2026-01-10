@@ -1,0 +1,66 @@
+format 224
+
+classcanvas 129278 class_ref 128766 // Automate
+  classdiagramsettings member_max_width 0 end
+  xyzwh -3 339 2000 299 107
+end
+classcanvas 129406 class_ref 128894 // IEvent
+  classdiagramsettings member_max_width 0 end
+  xyz 341 367 2006
+end
+classcanvas 129662 class_ref 129022 // IEtat
+  classdiagramsettings member_max_width 0 end
+  xyz 189 77 2006
+end
+classcanvas 129918 class_ref 129150 // Etat1
+  classdiagramsettings member_max_width 0 end
+  xyz 277 15 2012
+end
+classcanvas 130174 class_ref 129278 // Etat2
+  classdiagramsettings member_max_width 0 end
+  xyz 59 12 2018
+end
+classcanvas 130430 class_ref 129406 // Main
+  classdiagramsettings member_max_width 0 end
+  xyz -100 137 2000
+end
+classcanvas 130558 class_ref 129534 // X
+  classdiagramsettings member_max_width 0 end
+  xyz 318 195 3005
+end
+relationcanvas 129534 relation_ref 128638 // <realization>
+  from ref 129278 z 2007 to ref 129406
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129790 relation_ref 128766 // <unidirectional association>
+  from ref 129278 z 2007 to ref 129662
+  role_a_pos 273 161 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130046 relation_ref 128894 // <realization>
+  from ref 129918 z 2013 to ref 129662
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130302 relation_ref 129022 // <realization>
+  from ref 130174 z 2019 to ref 129662
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130686 relation_ref 129150 // <realization>
+  from ref 130558 z 3006 to ref 129406
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130814 relation_ref 129278 // <unidirectional association>
+  from ref 130558 z 3006 to ref 129278
+  role_a_pos 251 316 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130942 relation_ref 129406 // <unidirectional association>
+  from ref 129278 z 3006 to ref 130558
+  role_a_pos 264 275 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

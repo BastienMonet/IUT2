@@ -1,0 +1,5 @@
+class Main
+!!!130174.java!!!	main(inout args : String [[]]) : void
+        X x = new X();
+        x.event1();
+        x.event2();

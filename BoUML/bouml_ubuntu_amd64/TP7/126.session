@@ -1,0 +1,14 @@
+window_sizes 950 1021 450 494 864 104
+cleanlooks_style
+diagrams
+  active  classdiagram_ref 128254 // d7
+    395 691 100 A4 0 0
+end
+show_stereotypes
+selected class_ref 128894 // MyChrono
+open
+  classview_ref 128254 // diagram7
+  classview_ref 128382 // Chrono1
+  deploymentview_ref 128254 // Chrono1
+end
+end
