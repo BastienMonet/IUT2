@@ -1,0 +1,7 @@
+class Arret
+!!!138366.java!!!	go(inout a : Automate) : void
+           a.setEtatCourant(new EnMarche());
+           a.getControle().go();
+!!!138494.java!!!	stop(inout a : Automate) : void
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'stop'");

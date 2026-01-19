@@ -1,0 +1,13 @@
+Host vm1
+    # Ne pas verifier la signature du serveur
+    StrictHostKeyChecking no
+    # IP de ma machine hôte distante
+    Hostname 172.16.1.143
+    # Serveur intermediaire pour atteindre vm1
+    ProxyJump acces-tp.iut45.univ-orleans.fr
+Host acces-tp.iut45.univ-orleans.fr
+    # Ne pas verifier la signature du serveur
+    StrictHostKeyChecking no
+Host localhost
+    # Ignorer le Warning d'attaque Man in the middle
+    UserKnownHostsFile /dev/null

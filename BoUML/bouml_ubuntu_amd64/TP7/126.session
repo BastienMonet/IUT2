@@ -1,14 +1,17 @@
-window_sizes 950 1021 450 494 864 104
+window_sizes 1142 1021 346 790 864 104
 cleanlooks_style
 diagrams
   active  classdiagram_ref 128254 // d7
-    395 691 100 A4 0 0
+    1147 837 100 A4 0 0
 end
 show_stereotypes
-selected class_ref 128894 // MyChrono
+selected class_ref 135806 // Chrono
 open
-  classview_ref 128254 // diagram7
+  class_ref 135806 // Chrono
+  class_ref 135934 // EnMarche
+  class_ref 136062 // Arret
   classview_ref 128382 // Chrono1
   deploymentview_ref 128254 // Chrono1
+  deploymentview_ref 134782 // TP7
 end
 end

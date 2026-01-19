@@ -1,0 +1,2 @@
+Lorsque A veut quitter la connexion avec B, celui ci envoi un message a B signalant son desir avec FIN, tant que B n'a pas répondu, B peut continuer d'envoyer des paquets
+puis une fois fini, B envoi FIN, A confirme qu'il a bien reçu le message par ACK, A et B ne sont plus connecter  

@@ -1,0 +1,16 @@
+window_sizes 1920 1031 450 1464 874 104
+cleanlooks_style
+diagrams
+  active  classdiagram_ref 128126 // classDiagram
+    1382 850 120 A4 0 0
+end
+show_stereotypes
+open
+  class_ref 128126 // Espece
+  class_ref 128254 // IRegime
+  class_ref 128382 // ITypeReproduction
+  class_ref 129022 // ISamuser
+  class_ref 129534 // Solitaire
+  class_ref 130430 // Tickable
+end
+end

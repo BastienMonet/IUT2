@@ -1,0 +1,232 @@
+format 224
+
+classcanvas 128126 class_ref 128126 // Espece
+  classdiagramsettings member_max_width 0 end
+  xyz 356.6 265 2000
+end
+classcanvas 128254 class_ref 128254 // IRegime
+  classdiagramsettings member_max_width 0 end
+  xyz 648.6 174.3 2000
+end
+classcanvas 128382 class_ref 128382 // ITypeReproduction
+  classdiagramsettings member_max_width 0 end
+  xyz 703.4 72.8 2000
+end
+classcanvas 129022 class_ref 128510 // Prairie
+  classdiagramsettings member_max_width 0 end
+  xyz 34.4 250 2000
+end
+classcanvas 129278 class_ref 128766 // Monde
+  classdiagramsettings member_max_width 0 end
+  xyz 103.5 413 2000
+end
+classcanvas 129406 class_ref 128894 // Physiologie
+  classdiagramsettings member_max_width 0 end
+  xyz 262.8 124.9 2000
+end
+classcanvas 129790 class_ref 129022 // ISamuser
+  classdiagramsettings member_max_width 0 end
+  xyz 575.2 300.5 2000
+end
+classcanvas 130814 class_ref 129150 // Aliment
+  classdiagramsettings member_max_width 0 end
+  xyz 148.2 199.3 2000
+end
+classcanvas 131070 class_ref 129278 // Carotte
+  classdiagramsettings member_max_width 0 end
+  xyz 66.1 189.8 2000
+end
+classcanvas 131326 class_ref 129406 // Environement
+  classdiagramsettings member_max_width 0 end
+  xyz 183 294.4 2005
+end
+classcanvas 133118 class_ref 129790 // IComportementSocial
+  classdiagramsettings member_max_width 0 end
+  xyz 585 376.6 2000
+end
+classcanvas 134014 class_ref 129918 // Controleur
+  classdiagramsettings member_max_width 0 end
+  xyz 462.4 129.2 2006
+end
+classcanvas 134142 class_ref 130046 // IEtat
+  classdiagramsettings member_max_width 0 end
+  xyz 472.4 37.2 2000
+end
+classcanvas 134270 class_ref 130174 // IEvent
+  classdiagramsettings member_max_width 0 end
+  xyz 614.4 43 2006
+end
+classcanvas 135422 class_ref 130302 // EspeceFactory
+  classdiagramsettings member_max_width 0 end
+  xyz 252 533 2000
+end
+classcanvas 135550 class_ref 130430 // Tickable
+  classdiagramsettings member_max_width 0 end
+  xyz 256 399.2 2000
+end
+classcanvas 136446 class_ref 130558 // Renard
+  classdiagramsettings member_max_width 0 end
+  xyz 381.8 391.6 2005
+end
+classcanvas 136574 class_ref 129534 // Solitaire
+  classdiagramsettings member_max_width 0 end
+  xyz 579.8 450.6 2000
+end
+classcanvas 136702 class_ref 129662 // EnMeute
+  classdiagramsettings member_max_width 0 end
+  xyz 674.6 452.2 2000
+end
+classcanvas 136958 class_ref 130686 // Lapin
+  classdiagramsettings member_max_width 0 end
+  xyz 466.8 359.6 2000
+end
+classcanvas 137214 class_ref 128638 // Carnivore
+  classdiagramsettings member_max_width 0 end
+  xyz 644.6 258.2 2005
+end
+classcanvas 137342 class_ref 130814 // Herbivore
+  classdiagramsettings member_max_width 0 end
+  xyz 742.2 260.6 2000
+end
+relationcanvas 129534 relation_ref 128510 // <unidirectional association>
+  from ref 128126 z 2001 to ref 129406
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130430 relation_ref 129022 // <composition>
+  from ref 128126 z 2001 to ref 129790
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130558 relation_ref 129150 // <composition>
+  from ref 128126 z 2001 to ref 128254
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130686 relation_ref 129278 // <composition>
+  from ref 128126 z 2001 to ref 128382
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131198 relation_ref 129534 // <generalisation>
+  from ref 131070 z 2001 to ref 130814
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131454 relation_ref 129662 // <unidirectional association>
+  from ref 129278 z 2006 to ref 131326
+  no_role_a no_role_b
+  multiplicity_a_pos 191 336 3000 no_multiplicity_b
+end
+relationcanvas 131582 relation_ref 129790 // <generalisation>
+  from ref 129022 z 2006 to ref 131326
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131710 relation_ref 129918 // <unidirectional association>
+  from ref 131326 z 2006 to ref 128126
+  no_role_a no_role_b
+  multiplicity_a_pos 342 296 3000 no_multiplicity_b
+end
+relationcanvas 131966 relation_ref 130046 // <unidirectional association>
+  from ref 128126 z 2001 to point 356 225
+  line 132222 z 2001 to point 381 226
+  line 132094 z 2001 to ref 128126
+  role_a_pos 391 248 3000 no_role_b
+  multiplicity_a_pos 369 248 3000 no_multiplicity_b
+end
+relationcanvas 132606 relation_ref 130174 // <generalisation>
+  from ref 128126 z 2001 to ref 130814
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132734 relation_ref 130302 // <unidirectional association>
+  from ref 128126 z 2001 to point 273 211
+  line 132862 z 2001 to ref 130814
+  role_a_pos 211 197 3000 no_role_b
+  multiplicity_a_pos 211 220 3000 no_multiplicity_b
+end
+relationcanvas 132990 relation_ref 130430 // <unidirectional association>
+  from ref 131326 z 2006 to ref 130814
+  no_role_a no_role_b
+  multiplicity_a_pos 175 240 3000 no_multiplicity_b
+end
+relationcanvas 133246 relation_ref 130558 // <unidirectional association>
+  from ref 128126 z 2001 to ref 133118
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134398 relation_ref 130814 // <realization>
+  from ref 128126 z 2007 to point 436 253
+  line 134910 z 2007 to ref 134270
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134526 relation_ref 130942 // <realization>
+  from ref 134014 z 2007 to ref 134270
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134654 relation_ref 131070 // <unidirectional association>
+  from ref 134014 z 2007 to ref 134142
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134782 relation_ref 131198 // <unidirectional association>
+  from ref 128126 z 2007 to ref 134014
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 135038 relation_ref 131326 // <directional aggregation>
+  from ref 129278 z 2001 to point 118 372
+  line 135166 z 2001 to point 156 375
+  line 135294 z 2001 to ref 129278
+  role_a_pos 118 358 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 136062 relation_ref 131454 // <unidirectional association>
+  from ref 129278 z 2001 to ref 135550
+  no_role_a no_role_b
+  multiplicity_a_pos 242 436 3000 no_multiplicity_b
+end
+relationcanvas 136190 relation_ref 131582 // <realization>
+  from ref 131326 z 2006 to ref 135550
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 136318 relation_ref 131710 // <realization>
+  from ref 128126 z 2001 to ref 135550
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 136830 relation_ref 131838 // <generalisation>
+  from ref 136446 z 2006 to ref 128126
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 137086 relation_ref 131966 // <generalisation>
+  from ref 136958 z 2001 to ref 128126
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 137470 relation_ref 132094 // <realization>
+  from ref 137214 z 2006 to ref 128254
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 137598 relation_ref 132222 // <realization>
+  from ref 137342 z 2001 to ref 128254
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 137726 relation_ref 132350 // <realization>
+  from ref 136702 z 2001 to ref 133118
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 137854 relation_ref 132478 // <realization>
+  from ref 136574 z 2001 to ref 133118
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

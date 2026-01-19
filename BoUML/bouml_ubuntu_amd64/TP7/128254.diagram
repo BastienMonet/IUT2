@@ -1,20 +1,50 @@
 format 224
 
-classcanvas 128126 class_ref 128254 // Chrono
+classcanvas 129278 class_ref 135806 // Chrono
   classdiagramsettings member_max_width 0 end
-  xyz 233 33 2000
+  xyz 31 240 3005
 end
-classcanvas 128254 class_ref 128510 // IHMChrono
+classcanvas 129790 class_ref 135934 // EnMarche
   classdiagramsettings member_max_width 0 end
-  xyz 27 77 3005
+  xyz 571 288 2012
 end
-classcanvas 128510 class_ref 128894 // MyChrono
+classcanvas 130046 class_ref 136062 // Arret
   classdiagramsettings member_max_width 0 end
-  xyz 26 221 2000
+  xyz 482 289 3011
 end
-relationcanvas 128382 relation_ref 128638 // <unidirectional association>
-  from ref 128254 z 3006 to ref 128126
-  role_a_pos 185 135 3000 no_role_b
+classcanvas 130558 class_ref 136574 // Automate
+  classdiagramsettings member_max_width 0 end
+  xyz 185 227 3011
+end
+classcanvas 130814 class_ref 136702 // IEvent
+  classdiagramsettings member_max_width 0 end
+  xyz 324 214 3017
+end
+classcanvas 131070 class_ref 136830 // IEtat
+  classdiagramsettings member_max_width 0 end
+  xyz 392 63 3022
+end
+classcanvas 131326 class_ref 136958 // Main
+  classdiagramsettings member_max_width 0 end
+  xyz 290 565 2000
+end
+classcanvas 131454 class_ref 135806 // Chrono
+  classdiagramsettings member_max_width 0 end
+  xyz 90 64 3016
+end
+relationcanvas 130686 relation_ref 136702 // <unidirectional association>
+  from ref 130558 z 3012 to ref 129278
+  role_a_pos 139 275 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130942 relation_ref 136446 // <realization>
+  from ref 130558 z 3018 to ref 130814
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131198 relation_ref 136574 // <unidirectional association>
+  from ref 130558 z 3023 to ref 131070
+  role_a_pos 374 113 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 end

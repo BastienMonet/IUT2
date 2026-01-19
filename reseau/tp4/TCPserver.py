@@ -7,6 +7,7 @@ from threading import Lock
 class Server:
     def __init__(self):
         self.counter = 0
+        self.lock = Lock()
 
     def mainServer(self, port):
         # tcp par default
@@ -29,7 +30,6 @@ class Session(Thread):
         self.socket = sock
         self.file = sock.makefile(mode="rw")
         self.addr = addr
-        self.lock = Lock()
 
     def run(self):
         while True:
@@ -44,9 +44,9 @@ class Session(Thread):
             if len(line.split()) == 2:
                 command, nbre = line.split()
                 if command == "incr":
-                    self.lock.acquire()
+                    self.server.lock.acquire()
                     self.server.counter+=int(nbre)
-                    self.lock.release()
+                    self.server.lock.release()
                     self.file.write(f"new val {self.server.counter}\n")
                     self.file.flush()
 

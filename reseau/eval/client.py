@@ -8,17 +8,18 @@ def client(host, port):
 
     f = sock.makefile(mode="rw")
     while True:
-        a = input("veuillez rentrer une valeur\n") 
+        a = input(">  ") 
         f.write(a + "\n")
         f.flush()
-        if a == "quit" :
+        res = f.readline()
+        print(res)
+        if a == "QUIT" :
             break
-        print(f.readline())
+
 
     # Fermeture
     f.close()
     sock.shutdown(socket.SHUT_RDWR)
     sock.close()
 
-client("localhost", 5556)
-
+client("localhost", 5555)

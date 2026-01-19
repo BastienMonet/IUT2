@@ -1,0 +1,761 @@
+format 224
+"TPspecial"
+  revision 1
+  modified_by 126 "o22304875"
+
+
+  
+  // class settings
+  default_attribute_visibility private default_relation_visibility private default_operation_visibility public
+  
+  classdiagramsettings draw_all_relations yes hide_attributes no hide_operations no hide_getset_operations no hide_ports no show_members_full_definition no show_members_visibility no show_members_stereotype no show_members_context no show_members_multiplicity no show_members_initialization no show_attribute_modifiers no member_max_width 127 show_parameter_dir yes show_parameter_name yes package_name_in_tab no class_drawing_mode class drawing_language uml show_context_mode no auto_label_position yes show_relation_modifiers no show_relation_visibility no show_infonote no shadow yes gradient none show_stereotype_properties no end
+  
+  classcompositediagramsettings auto_label_position yes draw_all_relations yes shadow yes gradient none end
+  
+  usecasediagramsettings package_name_in_tab no show_context_mode no auto_label_position yes draw_all_relations yes class_drawing_mode actor shadow yes gradient none show_stereotype_properties no end
+  
+  sequencediagramsettings show_full_operations_definition no show_class_of_operation no write_horizontally yes instances_drawing_mode natural drawing_language uml draw_all_relations yes shadow yes gradient none show_stereotype_properties no show_class_context_mode no show_msg_context_mode no end
+  
+  collaborationdiagramsettings show_full_operations_definition no show_class_of_operation no show_hierarchical_rank no write_horizontally yes instances_drawing_mode natural drawing_language uml package_name_in_tab no show_class_pack_context_mode no show_msg_context_mode no draw_all_relations yes shadow yes gradient none show_stereotype_properties no end
+  
+  objectdiagramsettings write_horizontally yes package_name_in_tab no show_class_pack_context_mode no auto_label_position yes draw_all_relations yes shadow yes gradient none show_stereotype_properties no end
+  
+  objectcompositediagramsettings auto_label_position yes draw_all_relations yes shadow yes gradient none end
+  
+  componentdiagramsettings package_name_in_tab no show_context_mode no auto_label_position yes draw_all_relations yes shadow yes gradient none
+   draw_component_as_icon no show_component_req_prov no show_component_rea no show_stereotype_properties no end
+  
+  deploymentdiagramsettings package_name_in_tab no show_context_mode no write_horizontally yes auto_label_position yes draw_all_relations yes shadow yes gradient none
+   draw_component_as_icon no show_component_req_prov no show_component_rea no show_stereotype_properties no end
+  
+  statediagramsettings package_name_in_tab no show_context_mode no auto_label_position yes write_label_horizontally yes show_trans_definition no draw_all_relations yes shadow yes gradient none
+   show_activities yes region_horizontally yes drawing_language uml show_stereotype_properties no end
+  
+  activitydiagramsettings package_name_in_tab no show_context_mode no show_opaque_action_definition no auto_label_position yes write_label_horizontally no draw_all_relations yes shadow yes gradient none
+   show_infonote yes drawing_language uml show_stereotype_properties no end
+  
+  class_color yellow duration_color transparent continuation_color gray note_color blue fragment_color transparent subject_color transparent usecase_color yellow package_color transparent component_color green artifact_color green deploymentnode_color gray state_color yellow stateaction_color transparent activity_color transparent activityregion_color transparent activitypartition_color transparent activityaction_color transparent parameterpin_color white generalization_color black 
+  dpi 96
+  font_size 9
+  diagram_format A4
+
+  image_root_dir ""
+
+
+  mark_for_import
+  
+  classview 128126 "diagram"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 128126 "classDiagram"
+      classdiagramsettings draw_all_relations no member_max_width 0 end
+      size A4
+    end
+
+    class 128126 "Espece"
+      abstract visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 128254 // <realization>
+	relation 128254 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 128254 // <realization>
+	  b parent class_ref 128382 // ITypeReproduction
+      end
+
+      classrelation 128382 // <realization>
+	relation 128382 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 128382 // <realization>
+	  b parent class_ref 128254 // IRegime
+      end
+
+      classrelation 128510 // <unidirectional association>
+	relation 128510 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 128510 // <unidirectional association>
+	  b parent class_ref 128894 // Physiologie
+      end
+
+      classrelation 128638 // <unidirectional association>
+	relation 128638 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 128638 // <unidirectional association>
+	  b parent class_ref 128766 // Monde
+      end
+
+      classrelation 128766 // <realization>
+	relation 128766 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 128766 // <realization>
+	  b parent class_ref 129022 // ISamuser
+      end
+
+      attribute 128126 "energie"
+	private explicit_type ""
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      classrelation 129022 // <composition>
+	relation 129022 *---
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 129022 // <composition>
+	  b role_name "" package
+	    classrelation_ref 131710 // <composition>
+      end
+
+      classrelation 129150 // <composition>
+	relation 129150 *---
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 129150 // <composition>
+	  b role_name "" package
+	    classrelation_ref 131582 // <composition>
+      end
+
+      classrelation 129278 // <composition>
+	relation 129278 *---
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 129278 // <composition>
+	  b role_name "" package
+	    classrelation_ref 131454 // <composition>
+      end
+
+      classrelation 130046 // enfants (<unidirectional association>)
+	relation 130046 --->
+	  a role_name "enfants" multiplicity "*" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 130046 // enfants (<unidirectional association>)
+	  b parent class_ref 128126 // Espece
+      end
+
+      classrelation 130174 // <generalisation>
+	relation 130174 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 130174 // <generalisation>
+	  b parent class_ref 129150 // Aliment
+      end
+
+      classrelation 130302 // alimentation (<unidirectional association>)
+	relation 130302 --->
+	  a role_name "alimentation" multiplicity "*" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 130302 // alimentation (<unidirectional association>)
+	  b parent class_ref 129150 // Aliment
+      end
+
+      classrelation 130558 // <unidirectional association>
+	relation 130558 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 130558 // <unidirectional association>
+	  b parent class_ref 129790 // IComportementSocial
+      end
+
+      classrelation 130814 // <realization>
+	relation 130814 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 130814 // <realization>
+	  b parent class_ref 130174 // IEvent
+      end
+
+      classrelation 131198 // <unidirectional association>
+	relation 131198 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 131198 // <unidirectional association>
+	  b parent class_ref 129918 // Controleur
+      end
+
+      classrelation 132094 // <realization>
+	relation 131710 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 132094 // <realization>
+	  b parent class_ref 130430 // Tickable
+      end
+    end
+
+    class 128254 "IRegime"
+      visibility package stereotype "interface"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}interface ${name}${extends} {
+${members}}
+"
+      php_decl "${comment}interface ${name}${extends} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl "${comment}${abstract}${local}interface ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 128126 "seNourir"
+	public explicit_return_type ""
+	nparams 0
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      classrelation 131582 // <composition>
+	relation_ref 129150 // <composition>
+      end
+    end
+
+    class 128382 "ITypeReproduction"
+      visibility package stereotype "interface"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}interface ${name}${extends} {
+${members}}
+"
+      php_decl "${comment}interface ${name}${extends} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl "${comment}${abstract}${local}interface ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 128254 "seReproduire"
+	public explicit_return_type ""
+	nparams 0
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      classrelation 131454 // <composition>
+	relation_ref 129278 // <composition>
+      end
+    end
+
+    class 128510 "Prairie"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 128894 // <generalisation>
+	relation 128894 ---|>
+	  a private
+	    java "${type}"
+	    classrelation_ref 128894 // <generalisation>
+	  b parent class_ref 128766 // Monde
+      end
+
+      classrelation 129790 // <generalisation>
+	relation 129790 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 129790 // <generalisation>
+	  b parent class_ref 129406 // Environement
+      end
+    end
+
+    class 128638 "Carnivore"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 132478 // <realization>
+	relation 132094 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 132478 // <realization>
+	  b parent class_ref 128254 // IRegime
+      end
+    end
+
+    class 128766 "Monde"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 129406 // <unidirectional association>
+	relation 129406 --->
+	  a role_name "" multiplicity "*" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 129406 // <unidirectional association>
+	  b parent class_ref 129150 // Aliment
+      end
+
+      classrelation 129662 // <unidirectional association>
+	relation 129662 --->
+	  a role_name "" multiplicity "*" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 129662 // <unidirectional association>
+	  b parent class_ref 129406 // Environement
+      end
+
+      classrelation 131326 // instance (<directional aggregation>)
+	relation 131326 o-->
+	  a role_name "instance" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 131326 // instance (<directional aggregation>)
+	  b parent class_ref 128766 // Monde
+      end
+
+      classrelation 131838 // <unidirectional association>
+	relation 131454 --->
+	  a role_name "" multiplicity "*" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 131838 // <unidirectional association>
+	  b parent class_ref 130430 // Tickable
+      end
+    end
+
+    class 128894 "Physiologie"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 129022 "ISamuser"
+      visibility package stereotype "interface"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}interface ${name}${extends} {
+${members}}
+"
+      php_decl "${comment}interface ${name}${extends} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl "${comment}${abstract}${local}interface ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 128382 "jouer"
+	public explicit_return_type ""
+	nparams 0
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      classrelation 131710 // <composition>
+	relation_ref 129022 // <composition>
+      end
+    end
+
+    class 129150 "Aliment"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 129278 "Carotte"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 129534 // <generalisation>
+	relation 129534 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 129534 // <generalisation>
+	  b parent class_ref 129150 // Aliment
+      end
+    end
+
+    class 129406 "Environement"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 129918 // <unidirectional association>
+	relation 129918 --->
+	  a role_name "" multiplicity "*" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 129918 // <unidirectional association>
+	  b parent class_ref 128126 // Espece
+      end
+
+      classrelation 130430 // <unidirectional association>
+	relation 130430 --->
+	  a role_name "" multiplicity "*" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 130430 // <unidirectional association>
+	  b parent class_ref 129150 // Aliment
+      end
+
+      classrelation 131966 // <realization>
+	relation 131582 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 131966 // <realization>
+	  b parent class_ref 130430 // Tickable
+      end
+    end
+
+    class 129534 "Solitaire"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 132862 // <realization>
+	relation 132478 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 132862 // <realization>
+	  b parent class_ref 129790 // IComportementSocial
+      end
+    end
+
+    class 129662 "EnMeute"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 132734 // <realization>
+	relation 132350 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 132734 // <realization>
+	  b parent class_ref 129790 // IComportementSocial
+      end
+    end
+
+    class 129790 "IComportementSocial"
+      visibility package stereotype "interface"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}interface ${name}${extends} {
+${members}}
+"
+      php_decl "${comment}interface ${name}${extends} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl "${comment}${abstract}${local}interface ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 129918 "Controleur"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 130942 // <realization>
+	relation 130942 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 130942 // <realization>
+	  b parent class_ref 130174 // IEvent
+      end
+
+      classrelation 131070 // <unidirectional association>
+	relation 131070 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 131070 // <unidirectional association>
+	  b parent class_ref 130046 // IEtat
+      end
+    end
+
+    class 130046 "IEtat"
+      visibility package stereotype "interface"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}interface ${name}${extends} {
+${members}}
+"
+      php_decl "${comment}interface ${name}${extends} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl "${comment}${abstract}${local}interface ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 130174 "IEvent"
+      visibility package stereotype "interface"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}interface ${name}${extends} {
+${members}}
+"
+      php_decl "${comment}interface ${name}${extends} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl "${comment}${abstract}${local}interface ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 130302 "EspeceFactory"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 130430 "Tickable"
+      visibility package stereotype "interface"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}interface ${name}${extends} {
+${members}}
+"
+      php_decl "${comment}interface ${name}${extends} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl "${comment}${abstract}${local}interface ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 128510 "update"
+	public explicit_return_type ""
+	nparams 0
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 130558 "Renard"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 132222 // <generalisation>
+	relation 131838 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 132222 // <generalisation>
+	  b parent class_ref 128126 // Espece
+      end
+    end
+
+    class 130686 "Lapin"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 132350 // <generalisation>
+	relation 131966 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 132350 // <generalisation>
+	  b parent class_ref 128126 // Espece
+      end
+    end
+
+    class 130814 "Herbivore"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 132606 // <realization>
+	relation 132222 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 132606 // <realization>
+	  b parent class_ref 128254 // IRegime
+      end
+    end
+
+    class 130942 "Obervable"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+  end
+end

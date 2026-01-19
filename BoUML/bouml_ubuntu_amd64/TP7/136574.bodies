@@ -1,0 +1,13 @@
+class Automate
+!!!140158.java!!!	Automate(inout control : Chrono)
+    this.e = new Arret();
+    this.controle = control;
+
+!!!140286.java!!!	getControle() : Chrono
+    return controle;
+!!!140414.java!!!	setEtatCourant(inout etat : IEtat) : void
+    this.e = etat;
+!!!140542.java!!!	go() : void
+    e.go(this);
+!!!140670.java!!!	stop() : void
+    e.stop(this);
