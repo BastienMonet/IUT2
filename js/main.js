@@ -17,6 +17,18 @@ exoobj.addEventListener('click', function(e){
     
 });
 
+const exoapi = document.querySelector('#api');
+exoapi.addEventListener('click', function(e){
+    import('./apiTraining.js');
+    
+});
+
+const exoasyc = document.querySelector('#async');
+exoasyc.addEventListener('click', function(e){
+    import('./asyncTraining.js');
+    
+});
+
 const tpobj = document.querySelector('#tpobj');
 tpobj.addEventListener('click', function(e){
     import('./tpObject.js');

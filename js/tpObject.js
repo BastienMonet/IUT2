@@ -1,6 +1,4 @@
 
-
-
 class Event {
     type = '';
     date = '';
@@ -58,13 +56,13 @@ class Concert extends Event {
     }
 
     toString() {
-        return 'Concert de ' + this.theme; 
+        return 'Concert de ' + this.theme + ' le ' + this.date; 
     }
 }
 
 class Factory {
 
-    createEvent(type, ...args) {
+    static createEvent(type, ...args) {
     try {
         switch(type) {
             case 'Football':
@@ -79,7 +77,34 @@ class Factory {
     }
 }
 
-let factory = new Factory();
-
-const tennis = factory.createEvent('Football', "a", "b", new Date("2022-03-25"))
+const tennis = Factory.createEvent('Football', "a", "b", new Date("2022-03-25"))
 console.log(tennis.toString());
+
+const concert = Factory.createEvent('Concert', "Rock", new Date("2022-04-10"))
+console.log(concert.toString());
+
+const listEvent = [tennis, concert];
+
+class Render {
+    static renderInP(listEvent){
+        const ul = document.createElement("ul");
+        for (const event of listEvent) {
+            const li = document.createElement("li");
+            li.textContent = event.toString();
+            ul.appendChild(li);
+        }
+        document.body.appendChild(ul);
+    }
+}
+
+Render.renderInP(listEvent);
+
+
+
+
+
+
+
+
+
+
