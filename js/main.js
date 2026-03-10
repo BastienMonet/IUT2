@@ -35,6 +35,11 @@ tpobj.addEventListener('click', function(e){
     
 });
 
+const exomodule = document.querySelector('#module');
+exomodule.onclick = (e) => {
+    import('./moduleTraining.js');
+}
+
 
 // output single object
 const someObject = { str: "Some text", id: 5 };

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#a">test not found</a>
+
+    <div class="page" id="home">
+        <h1>Welcome to the Home Page</h1>
+        <p>This SPA uses data from a JSON file.</p>
+        <p>These are the first info you need to know about the fetched data</p>
+        <ul>
+            <li> title : <strong id="titre-json"> </strong></li>
+            <li> introduction : <strong id="intro"> </strong></li>
+        <ul>
+        <h2> liste des articles</h2>
+        <div class="articles-container">
+            
+
+        </div>
+
+    </div>
+    <div class="page" id="article">
+        <h2>Detail de l'article : <strong id="titre-article"></strong></h2>
+        <ul>
+            <li>text : <strong id="text"> ? </strong></li>
+            <li><a id="see-more" href="">see more</a></li>
+            <li><a id="modified-by" href="">modifier par</a></li>
+        </ul>
+        <a href="#home">Retour</a>
+
+    </div>
+
+    <div class="page" id="not-found">
+        <h2>error not-found</h2>
+        
+        <a href="#home">Retour</a>
+
+    </div>
+    
+    <script src="js/app.js" type="module" defer></script>
+</body>
+</html>

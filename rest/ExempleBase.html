@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        <h2 :title="compteur"> survoller moi</h2>
+        <p>{{ compteur }} </p>
+        <button @click=incrementer> ici </button>
+        <p v-if="estMultipleDeDix()"> est multiple de 10</p>
+
+        <input type="text" v-model="titre">
+
+    </div>
+    
+
+    <script type="module">
+        import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+
+        createApp({
+            data() {
+                return {
+                    compteur: 0,
+                    titre: 'Mon compteur'
+                }
+            },
+            methods : {
+                incrementer : function() {
+                    this.compteur++
+                },
+                estMultipleDeDix : function() {
+                    return this.compteur % 10 === 0
+                }
+            }
+        }).mount('#app')
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        <h2>Ma todo list</h2>
+
+        <form-todo @ajouter="ajouter">
+            
+        </form-todo>
+        
+        <p> {{ todo }}</p>
+        <p v-if="todos.length === 0"> pas de tache </p>
+        <ul>
+            <template v-for="item in todos">
+                <todo :nom="item.nom" :id="item.id" :termine="item.termine" @supprimer="supprimer(item.id)"></todo>
+            </template>  
+        </ul>
+    </div>
+    <style>
+
+        .termine {
+            text-decoration: line-through;
+        }
+    </style>
+    <script type="module">
+        import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+        createApp({
+            data() {
+                return {
+                    todos: [{id : 0  ,nom : 'tache1', termine : false}, 
+                            {id : 1, nom : 'tache2', termine : false},],
+                    valeurmax: 1
+                }
+            },
+            methods : {
+                ajouter : function(nouvelle) {
+                    this.todos.push({id: this.valeurmax+1 ,  nom : nouvelle, termine : false});
+                    this.valeurmax++;
+                },
+                supprimer : function(id) {
+                    this.todos = this.todos.filter(item => item.id !== id)
+                }
+            },
+            components : {
+                'todo' : {
+                    props : ['termine', 'nom', 'id'],
+                    template : `
+                    <li :class="{ termine : termine }">
+                        {{ nom }} 
+                        <button @click="$emit('supprimer')">Supprimer</button>
+                        <input type="checkbox" v-model="termine">
+                    </li>
+                    `,
+                },
+                'form-todo' : {
+                    data() {
+                        return {
+                            todo: ''
+                        }
+                        },
+                    methods : {
+                        soumettre : function() {
+                            if (this.todo !== '') {
+                                this.$emit('ajouter', this.todo);
+                                this.todo = '';
+                            } else {
+                                console.log('veuillez entrer une tache')
+                            }
+                        }
+                    },
+                    template : `
+                    <input type="text" v-model="todo" @keyup.enter="soumettre">
+                    <button @click="soumettre" >Ajouter</button>
+                    `
+                }
+            }
+        }).mount('#app')
+
+
+    </script>
+</body>
+</html>
