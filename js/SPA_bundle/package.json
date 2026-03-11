@@ -1,0 +1,21 @@
+{
+  "name": "spa_bundle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.105.4",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.23"
+  }
+}
