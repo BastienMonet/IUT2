@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:td2/UI/ecran4.dart';
 import 'package:td2/viewmodel/settingViewModel.dart';
+import 'package:td2/viewmodel/taskviewmodel.dart';
 import 'UI/mytheme.dart';
 import 'UI/ecran1.dart';
 import 'UI/ecran2.dart';
@@ -22,7 +24,13 @@ class WidgetIdk extends StatelessWidget {
           ChangeNotifierProvider(create: (_) {
             SettingViewModel settingviewmodel = SettingViewModel();
             return settingviewmodel;
-          })
+          }),
+          ChangeNotifierProvider(
+              create:(_){
+                TaskViewModel taskViewModel = TaskViewModel();
+                taskViewModel.generateTasks();
+                return taskViewModel;
+              } )
         ],
         child: Consumer<SettingViewModel>(
             builder: (context, SettingViewModel notifier, child) {
@@ -49,7 +57,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
   final List<Widget> _pages = [
-    new Ecran1(), new Ecran2(), new Ecran3()
+    new Ecran1(), new Ecran2(), new Ecran3(), new Ecran4()
   ];
 
   void _toogleIndex(int idx) {
@@ -70,9 +78,9 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           bottomNavigationBar: BottomNavigationBar(
               items: <BottomNavigationBarItem> [
-                BottomNavigationBarItem(icon: Icon(Icons.fireplace),label: 'burn in hell'),
-                BottomNavigationBarItem(icon: Icon(Icons.transgender),label : 'who tf are you'),
-                BottomNavigationBarItem(icon: Icon(Icons.sanitizer), label : 'you need mental health support'),
+                BottomNavigationBarItem(icon: Icon(Icons.fireplace),label: '1'),
+                BottomNavigationBarItem(icon: Icon(Icons.transgender),label : '2'),
+                BottomNavigationBarItem(icon: Icon(Icons.sanitizer), label : '3'),
               ],
               onTap: _toogleIndex
           )
